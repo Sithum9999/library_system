@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #2d3436;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.icet.learn.controller.book_manager.BookManagerFormController">
+    <children>
+        <Label alignment="CENTER" layoutX="242.0" layoutY="15.0" prefHeight="48.0" prefWidth="533.0" text="Manage Book Transaction" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutX="66.0" layoutY="89.0" prefHeight="94.0" prefWidth="143.0" style="-fx-background-color: #34495e; -fx-background-radius: 10;">
+            <children>
+                <Label layoutX="23.0" layoutY="14.0" prefHeight="31.0" prefWidth="120.0" text="Book Borrowed" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblBookBorrowed" layoutX="50.0" layoutY="45.0" prefHeight="31.0" prefWidth="56.0" text="100" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="21.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="66.0" layoutY="200.0" prefHeight="86.0" prefWidth="143.0" style="-fx-background-color: #34495e; -fx-background-radius: 10;">
+            <children>
+                <Label layoutX="23.0" layoutY="14.0" prefHeight="31.0" prefWidth="120.0" text="Book Return" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblBookReturn" layoutX="47.0" layoutY="46.0" prefHeight="31.0" prefWidth="56.0" text="100" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="21.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="65.0" layoutY="302.0" prefHeight="94.0" prefWidth="143.0" style="-fx-background-color: #34495e; -fx-background-radius: 10;">
+            <children>
+                <Label layoutX="23.0" layoutY="13.0" prefHeight="31.0" prefWidth="120.0" text="Overdue Books" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblOverdueBook" layoutX="47.0" layoutY="45.0" prefHeight="31.0" prefWidth="56.0" text="100" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="21.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="232.0" layoutY="89.0" prefHeight="253.0" prefWidth="306.0" style="-fx-background-color: #16a085; -fx-background-radius: 10;">
+            <children>
+                <Label layoutX="103.0" layoutY="4.0" prefHeight="32.0" prefWidth="120.0" text="Issue Book" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                    </font>
+                </Label>
+                <JFXComboBox fx:id="comboMemberName" layoutX="52.0" layoutY="51.0" prefHeight="31.0" prefWidth="194.0" promptText="Member Name" />
+                <JFXComboBox fx:id="comboBookTitle" layoutX="52.0" layoutY="100.0" prefHeight="26.0" prefWidth="194.0" promptText="Book Title" />
+                <DatePicker fx:id="dateDueDate" layoutX="48.0" layoutY="141.0" prefHeight="40.0" prefWidth="204.0" promptText="Due Date" />
+                <JFXButton layoutX="39.0" layoutY="201.0" onAction="#btnIssueBookOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: #00b894;" text="Issue Book" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="563.0" layoutY="89.0" prefHeight="254.0" prefWidth="364.0" style="-fx-background-color: #16a085; -fx-background-radius: 10;">
+            <children>
+                <Label layoutX="120.0" layoutY="-2.0" prefHeight="32.0" prefWidth="143.0" text="Return Book" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                    </font>
+                </Label>
+                <JFXComboBox fx:id="comboMemberNameRe" layoutX="116.0" layoutY="39.0" onAction="#selectReturnMemberNameOnAction" prefHeight="26.0" prefWidth="113.0" promptText="Member Name" />
+                <Label layoutX="33.0" layoutY="102.0" prefHeight="31.0" prefWidth="114.0" text="Due Date :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="33.0" layoutY="76.0" prefHeight="31.0" prefWidth="120.0" text="Borrowed Date : " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="32.0" layoutY="162.0" prefHeight="31.0" prefWidth="151.0" text="Update Fine (if Any) : " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <JFXTextField fx:id="txtUpdatedFine" layoutX="188.0" layoutY="164.0" prefHeight="30.0" prefWidth="114.0" promptText="Enter Amount">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></JFXTextField>
+                <JFXButton layoutX="69.0" layoutY="207.0" onAction="#btnReturnBookOnAction" prefHeight="38.0" prefWidth="237.0" style="-fx-background-color: #00b894;" text="Return Book" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </JFXButton>
+                <Label fx:id="lblBorrowedDate" layoutX="190.0" layoutY="75.0" prefHeight="31.0" prefWidth="126.0" text="Borrowed Date : " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblDueDate" layoutX="192.0" layoutY="102.0" prefHeight="31.0" prefWidth="114.0" text="Due Date :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <JFXComboBox fx:id="comboBookTitleRe" layoutX="245.0" layoutY="39.0" onAction="#selectReturnBookOnAction" prefHeight="26.0" prefWidth="98.0" promptText="Book Title" />
+                <JFXTextField fx:id="txtOrdeID" editable="false" layoutX="29.0" layoutY="39.0" prefHeight="26.0" prefWidth="70.0" promptText="Order ID" />
+                <Label layoutX="32.0" layoutY="131.0" prefHeight="31.0" prefWidth="114.0" text="Overdue Days :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <JFXTextField fx:id="txtOverdueDays" layoutX="192.0" layoutY="127.0" prefHeight="30.0" prefWidth="114.0" promptText="Enter Days">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></JFXTextField>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="tblBookRecord" layoutX="65.0" layoutY="412.0" onMouseClicked="#clickedBooksDetails" prefHeight="224.0" prefWidth="862.0">
+            <columns>
+                <TableColumn fx:id="colOrderId" prefWidth="73.5999755859375" text="OrderId" />
+                <TableColumn fx:id="colBookTitle" prefWidth="117.60002899169922" text="Book Title" />
+                <TableColumn fx:id="colMemberName" prefWidth="132.79998779296875" text="Member Name" />
+                <TableColumn fx:id="colBorrowedDate" prefWidth="109.5999755859375" text="Borrow Date" />
+                <TableColumn fx:id="colDueDate" prefWidth="110.39999389648438" text="Due Date" />
+                <TableColumn fx:id="colReturnDate" prefWidth="114.4000244140625" text="Return date" />
+                <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="110.39996337890625" text="Status" />
+                <TableColumn fx:id="colFine" prefWidth="91.19998779296873" text="Fine" />
+            </columns>
+        </TableView>
+        <JFXButton layoutX="456.0" layoutY="362.0" onAction="#btnAllBorrowedBooksOnAction" prefHeight="35.0" prefWidth="230.0" style="-fx-background-color: #00b894;" text="All Borrowed Books" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+      <JFXButton layoutX="232.0" layoutY="362.0" onAction="#btnAllAvailableBooksOnAction" prefHeight="35.0" prefWidth="204.0" style="-fx-background-color: #00b894;" text="All Availible Books" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="704.0" layoutY="362.0" onAction="#btnAllOverdueBooksOnAction" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: #00b894;" text="All Overdue Books" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+    </children>
+</AnchorPane>

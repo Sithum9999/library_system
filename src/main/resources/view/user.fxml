@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #2d3436;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.icet.learn.controller.user.UserFormController">
+    <children>
+        <Label layoutX="512.0" layoutY="159.0" prefHeight="19.0" prefWidth="49.0" text="Name" textFill="WHITE">
+            <font>
+                <Font name="Tahoma Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtName" layoutX="647.0" layoutY="156.0" prefHeight="30.0" prefWidth="234.0" styleClass="text-field" />
+        <Label layoutX="513.0" layoutY="262.0" text="Contact Number" textFill="WHITE">
+            <font>
+                <Font name="Tahoma Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtContactNumber" layoutX="647.0" layoutY="258.0" prefHeight="30.0" prefWidth="234.0" />
+        <TableView fx:id="tblUser" layoutX="76.0" layoutY="405.0" onMouseClicked="#clickedUsers" prefHeight="230.0" prefWidth="806.0">
+            <columns>
+                <TableColumn fx:id="colUserId" prefWidth="119.19999694824219" text="User ID" />
+                <TableColumn fx:id="colName" prefWidth="201.59999084472656" text="Name" />
+                <TableColumn fx:id="colMembershipDate" prefWidth="276.800048828125" text="Membership_Date" />
+                <TableColumn fx:id="colContactNumber" prefWidth="208.7999267578125" text="Contact_Number" />
+            </columns>
+        </TableView>
+        <Label layoutX="512.0" layoutY="214.0" prefHeight="19.0" prefWidth="126.0" text="Membership Date" textFill="WHITE">
+            <font>
+                <Font name="Tahoma Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtMembershipDate" layoutX="647.0" layoutY="209.0" prefHeight="30.0" prefWidth="234.0" />
+        <Label layoutX="516.0" layoutY="115.0" prefHeight="19.0" prefWidth="49.0" text="ID " textFill="WHITE">
+            <font>
+                <Font name="Tahoma Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtUserID" editable="false" layoutX="648.0" layoutY="110.0" prefHeight="30.0" prefWidth="233.0" styleClass="text-field" />
+      <Button layoutX="80.0" layoutY="331.0" onAction="#btnAddOnAction" prefHeight="40.0" prefWidth="266.0" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-size: 14px;" text="➕ Add">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="367.0" layoutY="331.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px;" text="✏ Update">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="642.0" layoutY="331.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="242.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px;" text="❌ Delete">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="185.0" layoutY="22.0" prefHeight="30.0" prefWidth="629.0" text="User Section" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Tahoma Bold" size="31.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="75.0" layoutY="93.0" prefHeight="94.0" prefWidth="167.0" style="-fx-background-color: #34495e; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="23.0" layoutY="14.0" prefHeight="31.0" prefWidth="120.0" text="Book Borrowed" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblBookBorrowed" layoutX="50.0" layoutY="45.0" prefHeight="31.0" prefWidth="56.0" text="100" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="268.0" layoutY="97.0" prefHeight="86.0" prefWidth="167.0" style="-fx-background-color: #34495e; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="35.0" layoutY="14.0" prefHeight="31.0" prefWidth="98.0" text="Book Return" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblBookReturn" layoutX="51.0" layoutY="46.0" prefHeight="31.0" prefWidth="56.0" text="100" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="76.0" layoutY="215.0" prefHeight="86.0" prefWidth="167.0" style="-fx-background-color: #34495e; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="23.0" layoutY="13.0" prefHeight="31.0" prefWidth="120.0" text="Overdue Books" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOverdueBook" layoutX="47.0" layoutY="45.0" prefHeight="31.0" prefWidth="56.0" text="100" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="266.0" layoutY="215.0" prefHeight="86.0" prefWidth="167.0" style="-fx-background-color: #34495e; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="23.0" layoutY="14.0" prefHeight="31.0" prefWidth="120.0" text="Active Borrowing" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblBookReturn1" layoutX="54.0" layoutY="46.0" prefHeight="31.0" prefWidth="56.0" text="100" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

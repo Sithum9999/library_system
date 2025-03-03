@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.icet.learn.controller.login.LoginFormController">
+   <children>
+      <AnchorPane prefHeight="450.0" prefWidth="650.0">
+         <children>
+
+            <Rectangle height="450.0" width="650.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.0" startY="0.0">
+                     <stops>
+                        <Stop color="#0F2027" offset="0.0" />
+                        <Stop color="#203A43" offset="0.5" />
+                        <Stop color="#2C5364" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+
+            <Label layoutX="175.0" layoutY="31.0" text="Library System Login" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font>
+            </Label>
+
+            <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="280.0" layoutX="135.0" layoutY="100.0" opacity="0.9" stroke="LIGHTGRAY" strokeWidth="1.0" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" width="380.0" />
+
+            <JFXTextField fx:id="txtEmail" focusColor="#2C5364" layoutX="175.0" layoutY="140.0" prefWidth="300.0" promptText="Email" style="-fx-background-radius: 20px; -fx-padding: 5px;" unFocusColor="GRAY" />
+
+            <JFXPasswordField fx:id="txtPassword" focusColor="#2C5364" layoutX="175.0" layoutY="190.0" prefWidth="300.0" promptText="Password" style="-fx-background-radius: 20px; -fx-padding: 5px;" unFocusColor="GRAY" />
+
+            <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="195.0" layoutY="250.0" onAction="#btnLoginOnAction" prefWidth="130.0" style="-fx-background-color: #203A43; -fx-font-size: 14px; -fx-background-radius: 20px;" text="Login" textFill="WHITE" />
+
+            <JFXButton fx:id="btnRegister" buttonType="RAISED" layoutX="345.0" layoutY="250.0" onAction="#btnRegisterdOnAction" prefWidth="130.0" style="-fx-background-color: #2C5364; -fx-font-size: 14px; -fx-background-radius: 20px;" text="Register" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
